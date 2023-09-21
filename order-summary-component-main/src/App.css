@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display", 'Courier New', Courier, monospace;
+  font-size: 16px;
+  transition: all ease-in-out 200ms 0s;
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* ### Primary */
+
+  --Pale-blue: hsl(225, 100%, 94%);
+  --Bright-blue: hsl(245, 75%, 52%);
+  /* ### Neutral */
+  --Very-pale-blue: hsl(225, 100%, 98%);
+  --Desaturated-blue: hsl(224, 23%, 55%);
+  --Dark-blue: hsl(223, 47%, 23%);
+  /* hsl(246, 11%, 61%) */
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--Very-pale-blue);
+}
+
+.summary {
+  padding: 25px;
+  background-color: white;
+}
+
+.card {
+  max-width: 340px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* card top image */
+img:not(span>img) {
+  object-fit: contain;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--Dark-blue);
+  font-weight: bold;
+}
+
+p {
+  text-wrap: wrap;
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--Desaturated-blue);
+  line-height: 1.3rem;
+}
+
+
+.selected-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--Very-pale-blue);
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.plan-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.annual-plan {
+  color: var(--Dark-blue);
+  font-weight: 900;
+}
+
+.price {
+  font-size: 0.8rem;
+  color: var(--Desaturated-blue);
+}
+
+/* change link */
+.selected-plan>a,
+.selected-plan>a:visited {
+  color: var(--Bright-blue);
+  font-weight: bold;
+}
+
+.selected-plan>a:hover {
+  color: var(--Desaturated-blue);
+}
+
+/* proceed to payment button */
+button {
+  display: block;
+  width: 100%;
+  background-color: var(--Bright-blue);
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  border: 0;
+}
+
+button:hover {
+  background-color: var(--Desaturated-blue);
+}
+
+/* cancel link */
+a:not(.selected-plan>a) {
+  display: block;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  color: var(--Desaturated-blue);
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+a:not(.selected-plan>a):hover {
+  color: var(--Dark-blue);
+}
+
+@media only screen and (max-width:365px) {
+  main {
+    background-image: url('./images/pattern-background-mobile.svg');
+    background-repeat: no-repeat;
+    object-fit: contain;
+  }
+}
+
+@media only screen and (min-width:366px) and (max-width:1440px) {
+  main {
+    background-image: url('./images/pattern-background-desktop.svg');
+    object-fit: contain;
+    background-repeat: no-repeat;
+  }
+}
