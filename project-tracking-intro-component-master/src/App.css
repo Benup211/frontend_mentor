@@ -1,0 +1,78 @@
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --Red: hsl(0, 100%, 68%);
+  --Very-Dark-Blue: hsl(230, 29%, 20%);
+  --Dark-Grayish-Blue: hsl(230, 11%, 40%);
+  --Grayish-Blue: hsl(231, 7%, 65%);
+  --Light-Grayish-Blue: hsl(207, 33%, 95%);
+}
+.shape{
+  width: 50%;
+  height: 50%;
+  background-color:var(--Light-Grayish-Blue);
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  top: 0;
+  border-radius: 0px 0px 0px 20px;
+}
+.nav-bar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav{
+  width: 80%;
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a{
+  display: inline-block;
+  text-decoration: none;
+  padding-inline-end:16px;
+  padding-inline-start:16px;
+}
+main{
+  margin-top: 60px;
+  display: flex;
+}
+img{
+  object-fit: contain;
+}
+.intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.intro>*{
+  margin-bottom: 20px;
+  text-align: center;
+}
+@media screen and (max-width:500px) {
+  main{
+    flex-direction: column-reverse;
+  }
+  img{
+    width: 150%;
+  }
+  .intro,.intro-img{
+    width:100%;
+    overflow: hidden;
+  }
+  .links{
+    display: none;
+  }
+}
+@media screen and ((min-width:501px) and (max-width:1440px))   {
+  .intro,.intro-img{
+    width:50%;
+    overflow: hidden;
+  }
+}
